@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>BATTLE PLAN: PASQUA 2K26</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@300;700&display=swap');
+
+        :root {
+            --bg: #050505;
+            --accent: #ff003c; 
+            --sub-accent: #00f2ff; 
+            --text: #ffffff;
+            --done: #444;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: linear-gradient(rgba(255, 0, 60, 0.05) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(255, 0, 60, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .header {
+            text-align: center;
+            border: 8px double var(--accent);
+            padding: 30px;
+            margin-bottom: 50px;
+            background: rgba(20, 20, 20, 0.9);
+            box-shadow: 15px 15px 0px rgba(255, 0, 60, 0.3);
+        }
+
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 3.5rem;
+            margin: 10px 0;
+            color: var(--accent);
+            text-transform: uppercase;
+            text-shadow: 4px 4px var(--bg), 6px 6px var(--sub-accent);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 25px;
+        }
+
+        .day-card {
+            border-left: 10px solid var(--text);
+            background: #111;
+            padding: 20px;
+            position: relative;
+        }
+
+        .day-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: block;
+            border-bottom: 2px solid var(--sub-accent);
+            padding-bottom: 5px;
+            color: var(--sub-accent);
+        }
+
+        .task-list { list-style: none; padding: 0; }
+        
+        .task-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #222;
+            cursor: pointer;
+        }
+
+        .task-item input[type="checkbox"] {
+            appearance: none;
+            height: 20px;
+            width: 20px;
+            border: 2px solid var(--accent);
+            margin-right: 12px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .task-item input[type="checkbox"]:checked { background: var(--accent); }
+        .task-item input[type="checkbox"]:checked + .task-text {
+            text-decoration: line-through;
+            color: var(--done);
+        }
+
+        .time { font-weight: bold; color: var(--sub-accent); margin-right: 8px; }
+        .urgent { border-left-color: var(--accent); }
+        .critical { border-left-color: var(--sub-accent); }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>BATTLE PLAN 2K26</h1>
+        <h2>Uova o Colombe?</h2>
+        <img src="./Image_Battleplan.png" style="width: 100%; max-width: 600px; filter: contrast(1.2);">
+        <p>MISSION: SANTA PASQUA - OPERATIONAL SCHEDULE</p>
+    </div>
+
+    <div class="grid">
+        <div class="day-card">
+            <span class="day-title">SABATO 28 - LOGISTICA</span>
+            <div class="task-list">
+                <label class="task-item">
+                    <input type="checkbox"><span class="task-text">Ritirare Camere PTZ e varie da Steven</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <span class="day-title">MARTEDÌ 31 - RIFORNIMENTI</span>
+            <div class="task-list">
+                <label class="task-item"><input type="checkbox"><span class="task-text">Giro magazzino: attrezzi/fascette/guanti/nastro</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Giro tecnomat acquisti mancanze</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Rinnovare sim iliad</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Chiedere audio vari</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Mettere in carica + Verificare radio</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text" style="color:var(--accent)">PRANZO BATTLEPLAN</span></label>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <span class="day-title">MERCOLEDÌ 1 - DEPLOYMENT</span>
+            <div class="task-list">
+                <label class="task-item"><input type="checkbox"><span class="task-text">Giro San Giacomo</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Giro Malpighi</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Carico furgone magazzino x Giovedì</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Giro sede carico robe segreteria</span></label>
+            </div>
+        </div>
+
+        <div class="day-card urgent">
+            <span class="day-title">GIOVEDÌ 2 - D-DAY 1</span>
+            <div class="task-list">
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">08:30</span>Colazione Sanfra</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Montaggio Michelino + Regia</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Recupero roba dimenticata in sede</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Test (audio, aste, video, stream)</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Montaggio banchetti</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">12:45</span>INIZIO GESTO</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">15:00</span>FINE GESTO / Pranzo Segre</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Ritiro + Test Radio Sata</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Organizzazione Via Crucis + Carico furgone</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Aperitivo Segre Sanfra</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">20:15</span>Check impianto</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">21:00</span>INIZIO GESTO + MESSA</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">CENA INSIEME</span></label>
+            </div>
+        </div>
+
+        <div class="day-card critical">
+            <span class="day-title">VENERDÌ 3 - THE CLIMAX</span>
+            <div class="task-list">
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">10:30</span>Check Impianto Sanfra</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Pranzo con Michele</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">12:45</span>INIZIO GESTO</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">14:15</span>FINE GESTO</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">SMONTAGGIO A CANNONE SANFRA</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Montaggio Via Crucis</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">16:15</span>SANFRA DEVE FUNZIONARE</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">16:20</span>SQUADRE IN POSIZIONE</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text"><span class="time">16:30</span>INIZIO VIA CRUCIS</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Scarico Radio Sata in Magazzino</span></label>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <span class="day-title">POST-OP (SAB 4 / MAR 7)</span>
+            <div class="task-list">
+                <label class="task-item"><input type="checkbox"><span class="task-text">Sedie San Giacomo / Malpighi</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Ricarico furgone sede + tecnici</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Ricarico RadioSata in furgone</span></label>
+                <label class="task-item"><input type="checkbox"><span class="task-text">Ritorno roba RadioSata (Martedì 7)</span></label>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; font-family: 'Permanent Marker'; color: #444;">
+        FACCIAMOLO RISORGERE ANCHE QUEST'ANNO.
+    </div>
+
+</body>
+</html>
